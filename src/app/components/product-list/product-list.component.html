@@ -1,0 +1,23 @@
+<!-- <div  *ngFor="let product of productList">
+    {{product.DisplayName}}
+    <img [src]="product.FirstProductImageURL"/>
+
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col d-flex flex-wrap m-2">
+            <div *ngFor="let product of productList">
+                <div class="card" style="width: 18rem; margin: 5px;">
+                    <img [src]="product.FirstProductImageURL" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.DisplayName}}</h5><hr>
+                      <p class="card-text"><strong>Fiyat :  </strong> {{product.StrikeThroughPriceToShowOnScreen}} TL </p>
+                      <a routerLink="" class="btn btn-primary">ÜRÜN DETAY</a>
+                    </div>
+                  </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

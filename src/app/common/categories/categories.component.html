@@ -1,0 +1,74 @@
+<ul class="list-group">
+  <a
+    class="list-group-item list-group-item-disabled d-flex justify-content-between"
+  >
+    <div style="font-size: 20px"><b>Tüm Kategoriler</b></div>
+  </a>
+  <li *ngFor="let category of categories">
+    <div *ngIf="category.SubCategoryList.length == 0" routerLink="productList/{{category.ID}}">
+      {{ category.DisplayName }}
+    </div>
+
+    <div *ngIf="category.SubCategoryList.length > 0">
+      <app-sub-category
+        [subCategory]="category.SubCategoryList"
+        [displayName]="category.DisplayName"
+      ></app-sub-category>
+    </div>
+  </li>
+</ul>
+
+<!-- <div class="container-fluid">
+    <ul class="accordion" >
+        <li class="accordion-item">
+            <a routerLink="" routerLinkActive="active">TV - SES</a>
+            <ul>
+                <li><a>Televizyonlar</a></li>
+                <li><a href="">Kulaklıklar</a></li>
+                <li><a href="">Hoparlörler</a></li>
+                <li><a href="">Ev Sinema Sistemleri</a></li>
+            </ul>
+        </li>
+
+        <li class="accordion-item">
+           <a href="">BEYAZ EŞYA</a>
+           <ul>
+                <li><a href="">Buzdolapları</a></li>
+                <li><a href="">Derin Dondurucular</a></li>
+           </ul>
+        </li>
+
+        <li class="accordion-item">
+            <a href="">ANKASTRE</a>
+            <ul>
+                <li><a href="">Fırınlar</a></li>
+                <li><a href="">Davlumbazlar</a></li>
+            </ul>
+        </li>
+
+        <li class="accordion-item"><a href="">KÜÇÜK EV ALETLERİ</a></li>
+        <li class="accordion-item"><a href="">ISITMA - SOĞUTMA</a></li>
+        <li class="accordion-item"><a href="">AKILLI ÜRÜNLER</a></li>
+    </ul>
+</div> -->
+
+<!-- <br>
+<ul class="list-group">
+    <a class="list-group-item list-group-item-disabled d-flex justify-content-between">
+        <div style="font-size:20px;"><b>Tüm Kategori</b> </div>
+    </a>
+    <div *ngFor="let category of categories">
+        <li class="list-group-item list-group-item-disabled d-flex justify-content-between">
+            <div >
+                <img
+                
+                src="{{ category.ImageUri}}"
+                style="width: 40px; margin-right: 20px"
+              />{{ category.DisplayName }}
+             
+            </div>
+        </li>
+    </div>
+  </ul> -->
+
+<!-- (click)="getCategoryId(category)" -->
