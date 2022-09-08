@@ -1,22 +1,72 @@
-<ul class="list-group">
-  <a
+<div class="my-navbar">
+  <a  style="text-decoration: none; color: black;" routerLink="/categoryList"><h3 id="category-sm">Tüm Kategoriler</h3></a>
+  <div *ngFor="let category of categories" [id]="category.ID">
+    <a class="text-white"
+      *ngIf="category.SubCategoryList.length == 0"
+      routerLink="productList/{{ category.ID }}"
+      >{{ category.DisplayName }}</a
+    >
+    <div *ngIf="category.SubCategoryList.length > 0" class="my-dropdown">
+      <button class="dropbtn">
+        {{ category.DisplayName }}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div   class="my-dropdown-content">
+        <div class="my-header">
+          <h2></h2>
+        </div>
+        <div class="row">
+          <app-sub-category
+          [subCategory]="category.SubCategoryList"
+          [displayName]="category.DisplayName"
+        ></app-sub-category>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ul class="list-group">
+  <li
     class="list-group-item list-group-item-disabled d-flex justify-content-between"
+    
   >
-    <div style="font-size: 20px"><b>Tüm Kategoriler</b></div>
-  </a>
-  <li *ngFor="let category of categories">
-    <div *ngIf="category.SubCategoryList.length == 0" routerLink="productList/{{category.ID}}">
-      {{ category.DisplayName }}
+    <div style="font-size: 20px; float: right;">
+      <a style="text-decoration: none; color: black;" routerLink="/categoryList"><h3>Tüm Kategoriler</h3></a>
+    </div>
+  </li>
+  <li class="list-group-item list-group-item-disabled d-flex justify-content-between" *ngFor="let category of categories" id="category">
+    <div *ngIf="category.SubCategoryList.length == 0" routerLink="productList/{{category.ID}}"  style="margin-right: 80px;">
+      <a >{{ category.DisplayName }}</a>
     </div>
 
     <div *ngIf="category.SubCategoryList.length > 0">
-      <app-sub-category
+      <a >
+        <app-sub-category
         [subCategory]="category.SubCategoryList"
         [displayName]="category.DisplayName"
       ></app-sub-category>
+      </a>
     </div>
   </li>
-</ul>
+</ul> -->
+</div>
+
+<!-- <div class="container-fluid">
+  <ul class="accordion">
+    <li class="accordion-item">
+      <a class="d-flex justify-content-between">
+        <div>
+          <a routerLink="/categoryList">Tüm Kategoriler</a>
+        </div>
+      </a>
+    </li>
+    <li class="accordion-item">
+      <div>
+        <a routerLink="/categoryList">Tüm Kategoriler</a>
+      </div>
+    </li>
+  </ul>
+</div> -->
 
 <!-- <div class="container-fluid">
     <ul class="accordion" >

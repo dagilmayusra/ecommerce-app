@@ -1,3 +1,4 @@
+import { Detail } from './../models/Detail';
 import { Product } from './../models/Product';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -16,7 +17,9 @@ export class ProductService {
     return this.httpClient.get<response<ResultProduct<Product[]>>>(`https://store.vrunibex.com/mobile2/mbProduct/ProductList?CategoryID=${id}`)
   }
 
-  getProductById(id:number):Observable<response<Product>>{
-    return this.httpClient.get<response<Product>>(`https://store.vrunibex.com/mobile2/mbProduct/ProductDetail?productId=${id}`)
+  getProductById(id:number):Observable<response<Detail>>{
+    return this.httpClient.get<response<Detail>>(`https://store.vrunibex.com/mobile2/mbProduct/ProductDetail?productId=${id}`)
   }
 }
+
+

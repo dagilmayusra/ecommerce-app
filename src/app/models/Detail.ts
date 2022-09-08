@@ -1,5 +1,6 @@
 import { VisibleAttribute } from "./VisibleAttribute";
 
+//detail result
 export interface Detail{
     ID:number,
     ActualPriceToShowOnScreen:number,

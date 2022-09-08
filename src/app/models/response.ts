@@ -1,3 +1,4 @@
+//hepsinde var
 export interface response<T>{
     Exception:string,
     Message:string,

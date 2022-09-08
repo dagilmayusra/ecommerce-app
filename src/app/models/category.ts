@@ -1,3 +1,4 @@
+//treelist
 export class Category{
     ID: number;
     IsSelected: boolean;
@@ -6,7 +7,7 @@ export class Category{
     Code: string;
     ImageUri: string;
     IsNotHyperlink:boolean;
-    IsBrandCategory: boolean;
+    IsBrandCategory: string;
     ShowProducts:boolean;
     HasProduct: boolean;
     Count: number;

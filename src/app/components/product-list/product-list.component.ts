@@ -10,7 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  productList:Product[] =[] 
+  productList:Product[] =[]
+  products:Product; 
 
   constructor(private productService:ProductService,
     private route:ActivatedRoute
@@ -32,5 +33,4 @@ export class ProductListComponent implements OnInit {
       this.productList=data.Result.ProductList;
     })
   }
-
 }

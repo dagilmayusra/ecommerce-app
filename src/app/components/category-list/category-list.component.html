@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col d-flex flex-wrap m-2">
+            <div *ngFor="let category of categoryList">
+                <div class="card" style="width: 18rem; margin: 5px;">
+                    <img [src]="category.ImageUri" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{category.DisplayName}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

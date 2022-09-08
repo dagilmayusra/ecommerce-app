@@ -10,19 +10,9 @@ import { Category } from '../models/category';
 })
 export class CategoryService {
 
-
   constructor(private httpClient:HttpClient) { }
 
   getCategories():Observable<response<result<Category[]>>>{    
     return this.httpClient.get<response<result<Category[]>>>("https://store.vrunibex.com/mobile2/mbProduct/CategoryList")
   }
-
-
-  // getCategoryById(category:Category):Observable<Category>{
-  //   let newPath = "https://store.vrunibex.com/mobile2/mbProduct/ProductList?CategoryID={ID}" 
-  //   return this.httpClient.get<Category>(newPath);
-  // }
-
-  // "https://store.vrunibex.com/mobile2/mbProduct/CategoryList?=" +(category.ID);
-
 }

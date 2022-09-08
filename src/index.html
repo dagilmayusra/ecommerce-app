@@ -1,13 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>EcommerceApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>EcommerceApp</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box !important;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .my-navbar {
+        overflow: hidden;
+        background-color: #DF2027;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .my-navbar  a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .my-dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .my-dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font: inherit;
+        margin: 0;
+      }
+
+      .my-navbar  a:hover, .my-dropdown:hover .dropbtn {
+        background-color: red;
+        color: white;
+      }
+
+      .my-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:#DF2027;
+        width: 98%;
+        margin-left:13px;
+        margin-right: 15px;
+        left: 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .my-dropdown-content .header {
+        background: red;
+        padding: 16px;
+        color: white;
+      }
+
+      .my-dropdown:hover .my-dropdown-content {
+        display: block;
+        box-sizing: border-box !important;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .my-column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        background-color: #ccc;
+        height: 250px;
+      }
+
+      .my-column  a {
+        float: none;
+        color: rgb(255, 255, 255);
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .my-column  a:hover {
+        background-color: #ddd;
+      }
+
+      /* Clear floats after the columns */
+      .my-row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .my-column  {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

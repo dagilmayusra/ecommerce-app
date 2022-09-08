@@ -7,11 +7,14 @@ import { Category } from 'src/app/models/category';
   styleUrls: ['./sub-category.component.css']
 })
 export class SubCategoryComponent implements OnInit {
+
 @Input() subCategory:Category[]=[]
 @Input () displayName:string=""
+
   constructor() { }
 
   ngOnInit(): void {
+    console.error(this.subCategory)
   }
 
 }

@@ -1,18 +1,35 @@
-<div class="dropdown mt-1">
+<div class="row">
+  <div class="col" style="max-width:250px ;min-width:250px;text-align: center;" *ngFor="let item of subCategory; let i = index">
+    <a
+      *ngIf="item.SubCategoryList.length == 0"
+      routerLink="productList/{{ item.ID }}"
+      >{{ item.DisplayName }}</a
+    >
+    <div *ngIf="item.SubCategoryList.length > 0">
+      <app-sub-category
+        [subCategory]="item.SubCategoryList"
+        [displayName]="item.DisplayName"
+      ></app-sub-category>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="dropdown mt-1">
   <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
+    style="background-color: white; color: black"
   >
     {{ displayName }}
   </button>
   <ul class="dropdown-menu">
     <li *ngFor="let item of subCategory">
       <a
-        *ngIf="item.SubCategoryList.length == 0" routerLink="productList/{{item.ID}}"
+        *ngIf="item.SubCategoryList.length == 0"
+        routerLink="productList/{{ item.ID }}"
         class="dropdown-item"
-        
         >{{ item.DisplayName }}</a
       >
       <a *ngIf="item.SubCategoryList.length > 0" class="dropdown-item" href="#"
@@ -23,4 +40,4 @@
       ></a>
     </li>
   </ul>
-</div>
+</div> -->

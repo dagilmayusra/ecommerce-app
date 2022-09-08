@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { CategoryService } from './../../services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category';
@@ -10,11 +9,10 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoriesComponent implements OnInit {
 
-  categories;
+  categories:Category[]=[];
 
   constructor(
-     private categoryService:CategoryService,
-    private http:HttpClient
+     private categoryService:CategoryService
   ) { 
 
     
@@ -25,7 +23,7 @@ export class CategoriesComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe(data=>{
-      console.error(data)
+      //console.error(data)
       this.categories=data.Result.TreeList
     })
   }
@@ -34,4 +32,12 @@ export class CategoriesComponent implements OnInit {
     window.location.href=`categories/CategoryID/${category.ID}`
   }
 
+  filterCategory()
+  {
+    return this.categories.filter(x=>x.SubCategoryList.length==0)
+  }
+  filterCategorySub()
+  {
+    return this.categories.filter(x=>x.SubCategoryList.length>0)
+  }
 }
