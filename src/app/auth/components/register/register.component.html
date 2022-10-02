@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Üye Ol</h3>
+        <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+                <label for="registerEmail">Email Adresi</label>
+                <input type="email"
+                       name="email" ngModel required #email="ngModel"
+                       class="form-control"
+                       id="registerEmail"
+                       aria-describedby="emailHelp"
+                       placeholder="Email giriniz">
+                <small id="emailHelp" 
+                       class="form-text text-muted">Email adresinizi kimse ile paylaşmayın</small>
+            </div>
+            <div class="form-group">
+                <label for="registerFistName">Ad</label>
+                <input type="text"
+                       name="firstName" ngModel required #firstName="ngModel"
+                       class="form-control"
+                       id="registerFistName"
+                       placeholder="Adınızı giriniz">
+            </div>
+            <div class="form-group">
+                <label for="registerLastName">Soyad</label>
+                <input type="text"
+                       name="lastName" ngModel required #lastName="ngModel"
+                       class="form-control"
+                       id="registerLastName"
+                       placeholder="Adınızı giriniz">
+            </div>
+            <div class="form-group">
+                <label for="registerCellPhone">Numara</label>
+                <input type="text"
+                       name="cellPhone" ngModel required #cellPhone="ngModel"
+                       class="form-control"
+                       id="registerCellPhone"
+                       placeholder="Telefon numaranızı giriniz">
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Şifre</label>
+                <input type="password"
+                       name="password" ngModel required #password="ngModel"
+                       class="form-control"
+                       id="registerPassword"
+                       aria-describedby="passwordHelp"
+                       placeholder="Şifre giriniz">
+                <small id="passwordHelp"
+                       class="form-text text-muted">Şifrenizi kimse ile paylaşmayın</small>
+            </div>
+            <div class="form-group">
+                <label for="registerBirthday">Doğum Tarihi</label>
+                <input type="date"
+                       name="birthday" ngModel required #birthday="ngModel"
+                       class="form-control"
+                       id="registerBirthday"
+                       placeholder="Doğum tarihinizi giriniz">
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+                Kaydol
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+        </form>
+    </div>
+</div>

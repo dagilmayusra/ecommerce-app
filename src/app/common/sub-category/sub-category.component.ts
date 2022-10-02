@@ -14,7 +14,7 @@ export class SubCategoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.error(this.subCategory)
+    //console.error(this.subCategory)
   }
 
 }
