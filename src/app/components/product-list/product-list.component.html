@@ -5,17 +5,23 @@
 </div> -->
 
 <div class="container">
+    
+    <app-search (searchTextChanged)="onSearchTextChanged($event)"></app-search>
+      
     <div class="row">
         <div class="col d-flex flex-wrap m-2">
             <div *ngFor="let product of productList">
-                <div class="card" style="width: 18rem; margin: 10px;">
-                    <img [src]="product.FirstProductImageURL" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{product.DisplayName}}</h5><hr>
-                      <p class="card-text"><strong>Fiyat :  </strong> {{product.StrikeThroughPriceToShowOnScreen}} TL </p>
-                      <a routerLink="/productDetail/{{product.ID}}" class="btn btn-primary">ÜRÜN DETAY</a>
-                    </div>
-                  </div>
+                <div *ngIf="searchText === '' || product.DisplayName.toLowerCase().includes(searchText) ">
+                    <div class="card" style="width: 18rem; margin: 10px;">
+                        <img [src]="product.FirstProductImageURL" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{product.DisplayName}}</h5><hr>
+                          <p class="card-text"><strong>Fiyat :  </strong> {{product.StrikeThroughPriceToShowOnScreen}} TL </p>
+                          <a routerLink="/productDetail/{{product.ID}}" class="btn btn-primary">Ürün Detayı</a>
+                          <button class="btn btn-primary" style="margin-left: 2px;">Sepete Ekle</button>
+                        </div>
+                      </div>
+                </div>
             </div>
            
         </div>

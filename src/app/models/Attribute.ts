@@ -25,5 +25,6 @@ export interface Attribute{
     IsClassification:boolean,
     ActualValueText:string,
     productList:string,
+    Quantity:string,
     ImageUrl:string
 }

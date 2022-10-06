@@ -13,6 +13,8 @@ export class ProductListComponent implements OnInit {
   productList:Product[] =[]
   products:Product; 
 
+  searchText:string='';
+
   constructor(private productService:ProductService,
     private route:ActivatedRoute
     ) { }
@@ -33,4 +35,13 @@ export class ProductListComponent implements OnInit {
       this.productList=data.Result.ProductList;
     })
   }
+
+  onSearchTextChanged(searchValue:string){
+    this.searchText= searchValue;
+    //console.log(this.searchText);
+  }
+
+  // addToProduct(product:Product){
+  //   this.productService.addToProduct(product);
+  // }
 }

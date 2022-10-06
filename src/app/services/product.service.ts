@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  // [x: string]: any;
 
   constructor(private httpClient:HttpClient) { }
 
@@ -20,6 +21,8 @@ export class ProductService {
   getProductById(id:number):Observable<response<Detail>>{
     return this.httpClient.get<response<Detail>>(`https://store.vrunibex.com/mobile2/mbProduct/ProductDetail?productId=${id}`)
   }
+
+  
 }
 
 
