@@ -1,8 +1,7 @@
-import { Attribute } from './../models/Attribute';
+import { Basket } from './../models/basket';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from '../models/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,12 @@ export class BasketService {
     private httpClient:HttpClient
   ) { }
 
-  get(){
-    //const observable: Observable<Product<Attribute>>
+  addToCart(basket: Basket):Observable<Basket>{
+    return this.httpClient.get<Basket>(`https://www.vestel.com.tr/mobile2/mbOrder/AddToCart?VariantID=${basket.VariantID}&quantity=${basket.quantity}`)
   }
+
+  removeFromCart(){
+    
+  }
+
 }

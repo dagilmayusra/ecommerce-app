@@ -17,7 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import {ToastModule} from 'primeng/toast';
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
-import { BasketShopComponent } from './common/basket-shop/basket-shop.component';
+import { BasketShopComponent } from './components/basket-shop/basket-shop.component';
 
 @NgModule({
   declarations: [

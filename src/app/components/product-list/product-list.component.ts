@@ -1,3 +1,4 @@
+import { BasketService } from './../../services/basket.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
@@ -16,7 +17,8 @@ export class ProductListComponent implements OnInit {
   searchText:string='';
 
   constructor(private productService:ProductService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private basketService: BasketService
     ) { }
 
   ngOnInit(): void {
@@ -41,7 +43,9 @@ export class ProductListComponent implements OnInit {
     //console.log(this.searchText);
   }
 
-  // addToProduct(product:Product){
-  //   this.productService.addToProduct(product);
-  // }
+  addToCart(product){
+    alert("sepete eklendi" + product.DisplayName);
+  }
+
+
 }

@@ -18,7 +18,7 @@
                           <h5 class="card-title">{{product.DisplayName}}</h5><hr>
                           <p class="card-text"><strong>Fiyat :  </strong> {{product.StrikeThroughPriceToShowOnScreen}} TL </p>
                           <a routerLink="/productDetail/{{product.ID}}" class="btn btn-primary">Ürün Detayı</a>
-                          <button class="btn btn-primary" style="margin-left: 2px;">Sepete Ekle</button>
+                          <button (click)="addToCart(product)" class="btn btn-primary" style="margin-left: 2px;">Sepete Ekle</button>
                         </div>
                       </div>
                 </div>

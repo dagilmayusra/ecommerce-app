@@ -1,4 +1,4 @@
-<h3 style="color:#034078">Login</h3>
+<h3 style="color:#034078">Üye Girişi</h3>
 <form [formGroup]="loginForm" (ngSubmit)="login()">
 
 <br>
@@ -8,11 +8,11 @@
 </div>
 <br>
 <div class="form-group">
-    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password">
+    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Şifre">
     <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').dirty">Password required</div>
 </div>
 <br>
-<button type="submit"  class="btn btn-primary"  [disabled]="loginForm.invalid">Login</button><br>
+<button type="submit"  class="btn btn-primary"  [disabled]="loginForm.invalid">Giriş Yap</button><br>
 <div class="form-check">
     <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
     <label class="form-check-label" for="flexCheckDefault">
